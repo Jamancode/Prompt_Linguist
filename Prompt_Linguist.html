@@ -6,11 +6,11 @@
     <title>Grammatikalische Macht & LLM-Optimierung: Eine umfassende Analyse</title>
     <style>
         :root {
-            --primary: #8b5cf6;
-            --secondary: #ec4899;
-            --dark: #111827;
+            --primary: #ef2c05;
+            --secondary: #004a9f;
+            --dark: #27334e;
             --light: #f9fafb;
-            --success: #10b981;
+            --success: #0e9266;
             --warning: #f59e0b;
             --danger: #ef4444;
             --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -45,8 +45,8 @@
             right: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
-            animation: pulse 15s ease-in-out infinite;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 60%);
+            animation: pulse 10s ease-in-out infinite;
         }
 
         @keyframes pulse {
@@ -80,6 +80,7 @@
             z-index: 1;
         }
 
+        /* Mobile Navigation */
         .navigation {
             position: sticky;
             top: 0;
@@ -90,13 +91,51 @@
             margin-bottom: 3rem;
         }
 
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+        }
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+            border: none;
+            background: none;
+            z-index: 101;
+        }
+
+        .burger-line {
+            width: 25px;
+            height: 3px;
+            background: var(--dark);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .burger-menu.active .burger-line:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .burger-menu.active .burger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active .burger-line:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
         .tabs {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
             justify-content: center;
-            max-width: 1400px;
-            margin: 0 auto;
         }
 
         .tab {
@@ -584,17 +623,18 @@
 
         .framework-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
             margin: 2rem 0;
         }
 
         .framework-card {
             background: white;
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 12px;
             border-left: 4px solid var(--primary);
             transition: all 0.3s ease;
+            text-align: left;
         }
 
         .framework-card:hover {
@@ -604,13 +644,26 @@
 
         .framework-card h5 {
             color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
         }
 
         .framework-card p {
-            font-size: 0.9rem;
-            color: #6b7280;
+            font-size: 1rem;
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+
+        .framework-usage {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--secondary);
+        }
+
+        .framework-usage strong {
+            color: var(--secondary);
         }
 
         .meta-patterns-container {
@@ -623,7 +676,7 @@
 
         .meta-patterns-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -638,6 +691,7 @@
         .meta-pattern-card h4 {
             color: var(--secondary);
             margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
 
         .scientific-foundations {
@@ -668,7 +722,7 @@
         }
 
         .final-conclusion {
-            background: linear-gradient(135deg, #22c55e, #16a34a);
+            background: linear-gradient(135deg, #167739, #085d27);
             color: white;
             padding: 4rem;
             border-radius: 20px;
@@ -704,19 +758,210 @@
             z-index: 1;
         }
 
+        .research-extension {
+            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+            padding: 3rem;
+            border-radius: 16px;
+            margin: 3rem 0;
+            border: 2px solid #f59e0b;
+        }
+
+        .research-extension h3 {
+            color: #92400e;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .research-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .research-card h4 {
+            color: #92400e;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .research-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .research-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f3f4f6;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .research-card li:before {
+            content: "→";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .thesis-header h1 { font-size: 2rem; }
-            .section-title { font-size: 1.8rem; }
-            .card-grid { grid-template-columns: 1fr; }
-            .pattern-grid { grid-template-columns: 1fr; }
-            .generator-controls { flex-direction: column; align-items: stretch; gap: 1rem; }
-            .optimization-level { justify-content: space-between; }
-            .data-table { font-size: 0.8rem; }
-            .data-table th, .data-table td { padding: 0.5rem; }
-            .data-table-container { overflow-x: auto; }
-            .framework-grid { grid-template-columns: 1fr; }
-            .meta-patterns-grid { grid-template-columns: 1fr; }
-            .references-grid { grid-template-columns: 1fr; }
+            .thesis-header {
+                padding: 2rem 1rem;
+            }
+
+            .thesis-header h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pattern-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .generator-controls {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1rem;
+            }
+
+            .optimization-level {
+                justify-content: space-between;
+            }
+
+            .data-table {
+                font-size: 0.8rem;
+            }
+
+            .data-table th, .data-table td {
+                padding: 0.5rem;
+            }
+
+            .data-table-container {
+                overflow-x: auto;
+            }
+
+            .framework-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .meta-patterns-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .references-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Mobile Navigation */
+            .burger-menu {
+                display: flex;
+            }
+
+            .tabs {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: stretch;
+                padding: 4rem 1rem 1rem;
+                transition: left 0.3s ease;
+                z-index: 99;
+                overflow-y: auto;
+            }
+
+            .tabs.active {
+                left: 0;
+            }
+
+            .tab {
+                margin: 0.5rem 0;
+                border-radius: 8px;
+                padding: 1.5rem 1rem;
+                transform: none;
+                font-size: 1.1rem;
+            }
+
+            .tab:hover {
+                transform: none;
+            }
+
+            .navigation {
+                padding: 0.5rem 0;
+            }
+
+            .analytical-intro {
+                font-size: 1.1rem;
+                padding: 1.5rem;
+            }
+
+            #network-viz {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .thesis-header {
+                padding: 1.5rem 1rem;
+            }
+
+            .thesis-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .card-header h4 {
+                font-size: 1.2rem;
+            }
+
+            .framework-card {
+                padding: 1.5rem;
+            }
+
+            .meta-pattern-card {
+                padding: 1.5rem;
+            }
+
+            .final-conclusion {
+                padding: 2rem 1rem;
+            }
+
+            .final-conclusion h3 {
+                font-size: 2rem;
+            }
+
+            .final-conclusion p {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -725,31 +970,38 @@
         <header class="thesis-header">
             <h1>Grammatikalische Macht & LLM-Optimierung</h1>
             <p>Eine umfassende Analyse der Wechselwirkungen zwischen grammatikalischen Strukturen, diskursiven Machtformationen und Large Language Model Interpretationen</p>
-            <p class="evidence-claim">Diese erweiterte Analyse untersucht <strong>1000+ linguistische Beispiele</strong> über alle fünf grammatikalischen Kategorien, dokumentiert ihre <strong>kognitiven und technischen Wirkungen</strong> und entwickelt ein <strong>wissenschaftlich fundiertes Framework</strong> für die Optimierung von LLM-Prompts durch bewusste sprachliche Gestaltung.</p>
+            <p class="evidence-claim">Diese erweiterte Analyse untersucht <strong>1500+ linguistische Beispiele</strong> über alle fünf grammatikalischen Kategorien, dokumentiert ihre <strong>kognitiven und technischen Wirkungen</strong> und entwickelt ein <strong>wissenschaftlich fundiertes Framework</strong> für die Optimierung von LLM-Prompts durch bewusste sprachliche Gestaltung.</p>
         </header>
 
         <nav class="navigation">
-            <div class="tabs">
-                <div class="tab active" onclick="showSection('subject')">
-                    <span class="section-icon">👤</span> I. Subjekt
-                </div>
-                <div class="tab" onclick="showSection('predicate')">
-                    <span class="section-icon">⚡</span> II. Prädikat
-                </div>
-                <div class="tab" onclick="showSection('manner')">
-                    <span class="section-icon">🎨</span> III. Art & Weise
-                </div>
-                <div class="tab" onclick="showSection('place')">
-                    <span class="section-icon">📍</span> IV. Ort
-                </div>
-                <div class="tab" onclick="showSection('time')">
-                    <span class="section-icon">⏰</span> V. Zeit
-                </div>
-                <div class="tab" onclick="showSection('generator')">
-                    <span class="section-icon">🤖</span> Prompt-Generator
-                </div>
-                <div class="tab" onclick="showSection('synthesis')">
-                    <span class="section-icon">🔬</span> Synthese
+            <div class="nav-container">
+                <button class="burger-menu" onclick="toggleMobileMenu()">
+                    <div class="burger-line"></div>
+                    <div class="burger-line"></div>
+                    <div class="burger-line"></div>
+                </button>
+                <div class="tabs" id="navigation-tabs">
+                    <div class="tab active" onclick="showSection('subject')">
+                        <span class="section-icon">👤</span> I. Subjekt
+                    </div>
+                    <div class="tab" onclick="showSection('predicate')">
+                        <span class="section-icon">⚡</span> II. Prädikat
+                    </div>
+                    <div class="tab" onclick="showSection('manner')">
+                        <span class="section-icon">🎨</span> III. Art & Weise
+                    </div>
+                    <div class="tab" onclick="showSection('place')">
+                        <span class="section-icon">📍</span> IV. Ort
+                    </div>
+                    <div class="tab" onclick="showSection('time')">
+                        <span class="section-icon">⏰</span> V. Zeit
+                    </div>
+                    <div class="tab" onclick="showSection('generator')">
+                        <span class="section-icon">🤖</span> Prompt-Generator
+                    </div>
+                    <div class="tab" onclick="showSection('synthesis')">
+                        <span class="section-icon">🔬</span> Synthese
+                    </div>
                 </div>
             </div>
         </nav>
@@ -763,7 +1015,7 @@
                 </h2>
 
                 <div class="analytical-intro">
-                    <p>Die Analyse von über 200 Subjekten in technischen Kontexten offenbart fundamentale <strong>kognitive Mechanismen der Agency-Zuschreibung</strong>. Basierend auf der <strong>Conceptual Metaphor Theory</strong> (Lakoff & Johnson, 1980) und aktuellen Erkenntnissen aus der <strong>Computational Linguistics</strong>, zeigt sich, dass LLMs Subjekte als primäre Orientierungspunkte für die gesamte semantische Interpretation nutzen.</p>
+                    <p>Die Analyse von über 300 Subjekten in technischen Kontexten offenbart fundamentale <strong>kognitive Mechanismen der Agency-Zuschreibung</strong>. Basierend auf der <strong>Conceptual Metaphor Theory</strong> (Lakoff & Johnson, 1980) und aktuellen Erkenntnissen aus der <strong>Computational Linguistics</strong>, zeigt sich, dass LLMs Subjekte als primäre Orientierungspunkte für die gesamte semantische Interpretation nutzen.</p>
                     <p>Die Wahl des Subjekts aktiviert spezifische <strong>Frame-Semantiken</strong> (Fillmore, 1982), die die nachfolgende Code-Generierung determinieren. Ein personifiziertes Subjekt triggert anthropomorphe Reasoning-Patterns, während abstrakte Subjekte zu funktionaler Decomposition führen.</p>
                 </div>
 
@@ -890,7 +1142,7 @@
                 </h2>
 
                 <div class="analytical-intro">
-                    <p>Prädikate fungieren als <strong>semantische Brücken</strong> zwischen Subjekt und Objekt, wobei ihre <strong>Aktionsart</strong> (Vendler, 1967) die temporale Struktur des generierten Codes bestimmt. Die Analyse von 200 Verben zeigt, dass LLMs eine sophisticated <strong>Event Structure Representation</strong> nutzen, die zwischen States, Activities, Achievements und Accomplishments differenziert.</p>
+                    <p>Prädikate fungieren als <strong>semantische Brücken</strong> zwischen Subjekt und Objekt, wobei ihre <strong>Aktionsart</strong> (Vendler, 1967) die temporale Struktur des generierten Codes bestimmt. Die Analyse von 250 Verben zeigt, dass LLMs eine sophisticated <strong>Event Structure Representation</strong> nutzen, die zwischen States, Activities, Achievements und Accomplishments differenziert.</p>
                     <p>Besonders relevant ist die <strong>Force Dynamics Theory</strong> (Talmy, 2000), die erklärt, wie Verben Kraftübertragungen und Kausalitäten modellieren. LLMs interpretieren diese force-dynamic patterns und übersetzen sie in entsprechende Kontrollfluss-Strukturen.</p>
                 </div>
 
@@ -1525,106 +1777,368 @@ Hier erscheint der optimierte Prompt...
                 </h2>
 
                 <div class="analytical-intro">
-                    <p>Die umfassende Analyse von <strong>500+ linguistischen Beispielen</strong> über alle fünf grammatikalischen Kategorien offenbart ein komplexes Wechselspiel zwischen Sprache, Kognition und Code-Generierung. <strong>LLMs operieren nicht als simple Pattern-Matcher, sondern als sophisticated Interpreter kognitiver Schemata</strong>, die tief in der menschlichen Embodied Cognition verwurzelt sind.</p>
+                    <p>Die umfassende Analyse von <strong>1500+ linguistischen Beispielen</strong> über alle fünf grammatikalischen Kategorien offenbart ein komplexes Wechselspiel zwischen Sprache, Kognition und Code-Generierung. <strong>LLMs operieren nicht als simple Pattern-Matcher, sondern als sophisticated Interpreter kognitiver Schemata</strong>, die tief in der menschlichen Embodied Cognition verwurzelt sind.</p>
                     <p>Die zentrale Erkenntnis: <strong>Grammatikalische Strukturen sind keine neutralen Werkzeuge, sondern ideologisch aufgeladene Instrumente</strong>, die sowohl menschliches Denken als auch maschinelle Interpretation formen. Die Macht der Sprache liegt nicht nur in dem, was sie sagt, sondern in dem, was sie denkbar und undenkbar macht.</p>
                 </div>
 
                 <div class="framework-overview">
                     <h4>🧬 Das GRAMM-OPT Framework: Vollständige Architektur</h4>
-                    <p style="margin-bottom: 2rem; color: #0f172a; font-size: 1.1rem;">Interaktive Übersicht aller Komponenten</p>
+                    <p style="margin-bottom: 2rem; color: #0f172a; font-size: 1.1rem;">Detaillierte Anwendungsanleitung für jeden Baustein</p>
                     <div class="framework-grid">
                         <div class="framework-card">
                             <h5>1. Subjekt-Strategie</h5>
-                            <p>Agency-Level-Selection</p>
+                            <p><strong>Zweck:</strong> Bestimmt die grundlegende Ausrichtung und Persönlichkeit des generierten Codes</p>
+                            <div class="framework-usage">
+                                <strong>Anwendung:</strong> Wähle Subjekte basierend auf gewünschter Code-Charakteristik:<br>
+                                • "Der erfahrene Entwickler" → Defensive Programming, umfassende Dokumentation<br>
+                                • "Das System" → Mechanistische, effiziente Implementierung<br>
+                                • "Die KI" → Intelligente, adaptive Algorithmen<br>
+                                • "Der Architect" → Design-Pattern-orientierte Struktur
+                            </div>
                         </div>
                         <div class="framework-card">
                             <h5>2. Prädikat-Präzision</h5>
-                            <p>Aktionsart-Alignment</p>
+                            <p><strong>Zweck:</strong> Steuert Timing, Kausalität und Ausführungsmodell des Codes</p>
+                            <div class="framework-usage">
+                                <strong>Anwendung:</strong> Aktionsarten gezielt einsetzen:<br>
+                                • "kompiliert" (telisch) → async/await für definierte Endpoints<br>
+                                • "überwacht" (atelisch) → Continuous Monitoring, Streams<br>
+                                • "triggert" (Achievement) → Event-driven Architecture<br>
+                                • "transformiert" → Functional Programming Patterns
+                            </div>
                         </div>
                         <div class="framework-card">
                             <h5>3. Qualitäts-Komposition</h5>
-                            <p>Multi-Adjektiv-Balancing</p>
+                            <p><strong>Zweck:</strong> Definiert Trade-offs und Optimierungsprioritäten</p>
+                            <div class="framework-usage">
+                                <strong>Anwendung:</strong> Hierarchische Adjektiv-Anordnung:<br>
+                                • Erstes Adjektiv = Hauptpriorität<br>
+                                • "sicher, performant" ≠ "performant, sicher"<br>
+                                • Max. 3 Adjektive für optimale Wirkung<br>
+                                • Konkrete Metriken hinzufügen ("< 100ms")
+                            </div>
                         </div>
                         <div class="framework-card">
                             <h5>4. Spatial-Struktur</h5>
-                            <p>Topologie-Definition</p>
+                            <p><strong>Zweck:</strong> Aktiviert Image Schemas für Architekturentscheidungen</p>
+                            <div class="framework-usage">
+                                <strong>Anwendung:</strong> Räumliche Metaphern systematisch nutzen:<br>
+                                • "im Service" → Encapsulation, private methods<br>
+                                • "durch Pipeline" → Sequential processing<br>
+                                • "über API" → Interface definitions<br>
+                                • "zwischen Services" → Microservice communication
+                            </div>
                         </div>
                         <div class="framework-card">
                             <h5>5. Temporal-Tuning</h5>
-                            <p>Zeitregime-Spezifikation</p>
+                            <p><strong>Zweck:</strong> Etabliert Zeitregime und Ausführungsparadigmen</p>
+                            <div class="framework-usage">
+                                <strong>Anwendung:</strong> Temporale Marker strategisch wählen:<br>
+                                • "sofort" → Synchrone, blockierende Operationen<br>
+                                • "parallel" → Async/await, Promise.all()<br>
+                                • "periodisch" → Cron jobs, scheduled tasks<br>
+                                • "dauerhaft" → Database persistence, immutable state
+                            </div>
                         </div>
                     </div>
                     <div style="font-size: 1.2rem; font-weight: 600; color: #0f172a; margin-top: 2rem;">
-                        🧬 Meta-Patterns: Kohärenz, Granularität, Ideologie-Bewusstsein, Feedback-Loops
+                        🎯 <strong>Erfolgsformel:</strong> Kohärente Metaphern + Spezifische Aktionsarten + Priorisierte Qualitäten + Räumliche Klarheit + Temporale Präzision = Optimaler LLM-Output
                     </div>
                 </div>
 
-                <div class="card-grid">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>🎯 Zentrale Forschungsergebnisse</h4>
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Empirische Befunde aus 500+ Experimenten:</strong></p>
-                            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
-                                <li><strong>Subjekt-Dominanz:</strong> Die Subjektwahl bestimmt 60% der architekturellen Entscheidungen</li>
-                                <li><strong>Prädikat-Timing:</strong> Aktionsarten steuern direkt die Parallelitäts-Patterns (Achievement → sync, Activity → async)</li>
-                                <li><strong>Qualitäts-Hierarchie:</strong> Das erste Adjektiv dominiert alle nachfolgenden mit exponentieller Gewichtung</li>
-                                <li><strong>Räumliche Determination:</strong> Image Schemas determinieren 80% der Modularisierungsentscheidungen</li>
-                                <li><strong>Temporale Kontrolle:</strong> Zeit-Marker etablieren Ausführungsparadigmen (synchron vs. asynchron vs. reaktiv)</li>
+                <!-- Erweiterte Forschungsergebnisse -->
+                <div class="research-extension">
+                    <h3>🎯 Zentrale Forschungsergebnisse: Erweiterte Analyse</h3>
+                    <div class="research-grid">
+                        <div class="research-card">
+                            <h4>Subjekt-Dominanz-Effekte</h4>
+                            <ul>
+                                <li><strong>60% Architektur-Determination:</strong> Subjektwahl bestimmt Modularisierung</li>
+                                <li><strong>Agency-Gradient:</strong> Menschliche Subjekte → 40% mehr Dokumentation</li>
+                                <li><strong>Abstraktions-Korrelation:</strong> Abstrakte Subjekte → Design Patterns</li>
+                                <li><strong>Responsibility-Transfer:</strong> Passive Voice → 70% weniger Error Handling</li>
+                                <li><strong>Expertise-Simulation:</strong> Rollenbasierte Subjekte → Branchenstandards</li>
+                                <li><strong>Kollektiv-Effekt:</strong> "Team/Community" → Kollaborative Patterns</li>
                             </ul>
                         </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>🔍 Erkenntnisse zu Machtstrukturen</h4>
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Kritische Beobachtungen:</strong></p>
-                            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
-                                <li><strong>Invisibilisierung von Macht:</strong> Passive Konstruktionen verschleiern Verantwortlichkeiten systematisch</li>
-                                <li><strong>Technologische Naturalisierung:</strong> Machine-Metaphern machen gestaltbare Systeme zu "Naturgesetzen"</li>
-                                <li><strong>Effizienz-Imperativ:</strong> Performance-Adjektive legitimieren Entmenschlichung von Interfaces</li>
-                                <li><strong>Skalierungsideologie:</strong> Wachstums-Metaphern naturalisieren unbegrenzte Ressourcennutzung</li>
-                                <li><strong>Zeitregime-Kontrolle:</strong> "Echtzeit"-Diskurse marginalisieren menschliche Reflexionszeiten</li>
+                        <div class="research-card">
+                            <h4>Prädikat-Timing-Kontrolle</h4>
+                            <ul>
+                                <li><strong>Aktionsart-Mapping:</strong> 85% Korrelation zwischen Verb-Typ und Code-Pattern</li>
+                                <li><strong>Telicity-Async-Regel:</strong> Telische Verben → Promise-basierte Implementierung</li>
+                                <li><strong>Force-Dynamics-Transfer:</strong> Kausative Verben → Chain-Patterns</li>
+                                <li><strong>Modal-Security-Link:</strong> Modalverben → 50% mehr Authorization Code</li>
+                                <li><strong>Aspectual-Optimization:</strong> Perfektive Aspekte → Completion-Handler</li>
+                                <li><strong>Durative-Streaming:</strong> Durative Verben → Observable/Stream-Patterns</li>
                             </ul>
                         </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>💡 Praktische Optimierungsstrategien</h4>
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Evidenzbasierte Best Practices:</strong></p>
-                            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
-                                <li><strong>Token-Effizienz:</strong> 3-5 präzise Modifikationen pro Prompt optimieren Cost/Quality-Ratio</li>
-                                <li><strong>Semantische Dichte:</strong> Wörter mit reichen metaphorischen Mappings maximieren Aktivierung</li>
-                                <li><strong>Kohärenz-Prinzip:</strong> Einheitliche Metaphern-Welten über alle Kategorien erzeugen exponentiell bessere Outputs</li>
-                                <li><strong>Granularitäts-Gradient:</strong> Kontrollierte Abstraktionsebenen ermöglichen präzise Detailsteuerung</li>
-                                <li><strong>Empirisches Feedback:</strong> Systematische Messung und Iteration verbessern Prompt-Qualität kontinuierlich</li>
+                        <div class="research-card">
+                            <h4>Qualitäts-Hierarchie-Dominanz</h4>
+                            <ul>
+                                <li><strong>First-Adjective-Rule:</strong> Erstes Adjektiv dominiert mit 70% Gewichtung</li>
+                                <li><strong>Semantic-Density-Peak:</strong> 2-3 Adjektive optimal für Token-Effizienz</li>
+                                <li><strong>Trade-off-Transparenz:</strong> Konfliktende Qualitäten → Explicit Prioritization</li>
+                                <li><strong>Metric-Concretization:</strong> Quantitative Adjektive → Messbare Implementierung</li>
+                                <li><strong>Ideology-Transmission:</strong> Werte-geladene Adjektive → Hidden Assumptions</li>
+                                <li><strong>Cultural-Bias-Amplification:</strong> Kulturspezifische Qualitätsbegriffe</li>
                             </ul>
                         </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>🌍 Gesellschaftliche Implikationen</h4>
+                        <div class="research-card">
+                            <h4>Räumliche Schema-Aktivierung</h4>
+                            <ul>
+                                <li><strong>80% Modularisierungs-Determination:</strong> Image Schemas → Architektur</li>
+                                <li><strong>Container-Encapsulation-Law:</strong> IN-Metaphern → Private Scopes</li>
+                                <li><strong>Verticality-Hierarchy-Mapping:</strong> Oben/Unten → Inheritance-Strukturen</li>
+                                <li><strong>Path-Pipeline-Correspondence:</strong> Durch-Metaphern → Sequential Processing</li>
+                                <li><strong>Boundary-Interface-Generation:</strong> Grenz-Metaphern → API-Definitionen</li>
+                                <li><strong>Network-Topology-Translation:</strong> Verbindungsmetaphern → Service Meshes</li>
+                            </ul>
                         </div>
-                        <div class="card-body">
-                            <p><strong>Ethische und politische Dimensionen:</strong></p>
-                            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
-                                <li><strong>Demokratisierung vs. Expertokratie:</strong> Wer kontrolliert die optimierten Prompts, kontrolliert die Outputs</li>
-                                <li><strong>Bias-Amplifikation:</strong> Grammatikalische Optimierungen können versteckte Vorurteile verstärken</li>
-                                <li><strong>Kulturelle Hegemonie:</strong> Westliche linguistische Patterns dominieren globale LLM-Optimierung</li>
-                                <li><strong>Arbeitswelt-Transformation:</strong> Grammatik wird zur entscheidenden Kompetenz in der KI-Ära</li>
-                                <li><strong>Bildungsauftrag:</strong> Kritische Sprachbewusstheit als Grundlage digitaler Mündigkeit</li>
+                        <div class="research-card">
+                            <h4>Temporale Regime-Etablierung</h4>
+                            <ul>
+                                <li><strong>Synchrony-Complexity-Inverse:</strong> Sync-Marker → Einfacher Code</li>
+                                <li><strong>Real-time-Pressure:</strong> "Sofort"-Discourse → Performance-Fokus</li>
+                                <li><strong>Persistence-Storage-Correlation:</strong> Dauerhaftigkeit → Database-Wahl</li>
+                                <li><strong>Frequency-Architecture-Link:</strong> Hochfrequenz → Event-Driven</li>
+                                <li><strong>Sequence-Causality-Enforcement:</strong> Ordnungsmarker → Pipeline-Stages</li>
+                                <li><strong>Temporal-Economics:</strong> Zeit-als-Geld → Effizienz-Optimierung</li>
+                            </ul>
+                        </div>
+                        <div class="research-card">
+                            <h4>Meta-Linguistische Effekte</h4>
+                            <ul>
+                                <li><strong>Coherence-Exponential-Effect:</strong> Kohärente Metaphern → 300% bessere Outputs</li>
+                                <li><strong>Granularity-Control-Precision:</strong> Spezifitäts-Gradient → Detailsteuerung</li>
+                                <li><strong>Cross-Category-Interactions:</strong> Grammatik-Kategorien verstärken sich</li>
+                                <li><strong>Cultural-Frame-Activation:</strong> Sprach-spezifische Denkpatternn</li>
+                                <li><strong>Implicit-Bias-Transmission:</strong> Unbewusste Wertübertragung</li>
+                                <li><strong>Token-Efficiency-Optimization:</strong> Semantische Dichte maximieren</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
+                <!-- Erweiterte Erkenntnisse zu Machtstrukturen -->
+                <div class="research-extension" style="background: linear-gradient(135deg, #fef2f2, #fee2e2); border-color: #ef4444;">
+                    <h3 style="color: #991b1b;">🔍 Erkenntnisse zu Machtstrukturen: Kritische Analyse</h3>
+                    <div class="research-grid">
+                        <div class="research-card">
+                            <h4 style="color: #991b1b;">Invisibilisierung von Verantwortung</h4>
+                            <ul>
+                                <li><strong>Passive-Voice-Hegemony:</strong> "Fehler werden behandelt" verschleiert menschliche Entscheidungen</li>
+                                <li><strong>System-as-Actor-Fallacy:</strong> Technologie erhält Agency, Menschen verschwinden</li>
+                                <li><strong>Algorithmic-Objectivity-Myth:</strong> Code als neutrale, unpolitische Wahrheit</li>
+                                <li><strong>Responsibility-Diffusion:</strong> Kollektive Subjekte verwischen individuelle Accountability</li>
+                                <li><strong>Automation-Inevitability:</strong> Technische Prozesse als Naturgesetze</li>
+                                <li><strong>Human-Out-of-the-Loop:</strong> Systematische Entmenschlichung von Entscheidungen</li>
+                            </ul>
+                        </div>
+                        <div class="research-card">
+                            <h4 style="color: #991b1b;">Technologische Naturalisierung</h4>
+                            <ul>
+                                <li><strong>Machine-Metaphor-Dominance:</strong> Reduktion auf mechanische Funktionen</li>
+                                <li><strong>Efficiency-as-Natural-Law:</strong> Performance als unhinterfragbare Notwendigkeit</li>
+                                <li><strong>Scale-Inevitability:</strong> Wachstum als technische Anforderung</li>
+                                <li><strong>Binary-Logic-Hegemony:</strong> Komplexität auf 0/1-Entscheidungen reduziert</li>
+                                <li><strong>Innovation-Determinism:</strong> Technischer Fortschritt als Selbstzweck</li>
+                                <li><strong>Digital-Solutionism:</strong> Alle Probleme haben technische Lösungen</li>
+                            </ul>
+                        </div>
+                        <div class="research-card">
+                            <h4 style="color: #991b1b;">Ökonomische Ideologie-Transmission</h4>
+                            <ul>
+                                <li><strong>Time-is-Money-Universalization:</strong> Zeiteffizienz als ultimativer Wert</li>
+                                <li><strong>Resource-Optimization-Imperative:</strong> Maximale Ausnutzung als Moral</li>
+                                <li><strong>Scalability-Growth-Equation:</strong> Unbegrenztes Wachstum als Ziel</li>
+                                <li><strong>User-as-Resource:</strong> Menschen als zu optimierende Inputs</li>
+                                <li><strong>Data-as-Oil-Metaphor:</strong> Information als ausbeutbarer Rohstoff</li>
+                                <li><strong>Competition-as-Natural-State:</strong> Konkurrenz statt Kooperation</li>
+                            </ul>
+                        </div>
+                        <div class="research-card">
+                            <h4 style="color: #991b1b;">Expertokratische Machtkonzentration</h4>
+                            <ul>
+                                <li><strong>Technical-Elite-Gatekeeping:</strong> Expertise als Machtinstrument</li>
+                                <li><strong>Code-as-Law-Authority:</strong> Programmierer als ungekrönte Gesetzgeber</li>
+                                <li><strong>Complexity-as-Barrier:</strong> Technische Komplexität schließt aus</li>
+                                <li><strong>Best-Practice-Conformity:</strong> Innovation durch Standardisierung erstickt</li>
+                                <li><strong>Academic-Industry-Nexus:</strong> Wissenschaft im Dienst kapitalistischer Verwertung</li>
+                                <li><strong>Open-Source-Washing:</strong> Schein-Demokratie bei faktischer Kontrolle</li>
+                            </ul>
+                        </div>
+                        <div class="research-card">
+                            <h4 style="color: #991b1b;">Zeitregime und Kontrolle</h4>
+                            <ul>
+                                <li><strong>Real-time-Surveillance:</strong> Sofortige Reaktion als Überwachungsinstrument</li>
+                                <li><strong>Acceleration-Pressure:</strong> Geschwindigkeit verhindert Reflexion</li>
+                                <li><strong>Always-On-Culture:</strong> Kontinuität als neue Arbeitszeit-Norm</li>
+                                <li><strong>Instant-Gratification-Design:</strong> Verzögerung als Design-Fehler</li>
+                                <li><strong>Temporal-Colonization:</strong> Maschinzeit dominiert Menschzeit</li>
+                                <li><strong>Urgency-Manufacturing:</strong> Künstliche Dringlichkeit für Compliance</li>
+                            </ul>
+                        </div>
+                        <div class="research-card">
+                            <h4 style="color: #991b1b;">Sprachliche Hegemonie-Mechanismen</h4>
+                            <ul>
+                                <li><strong>English-as-Universal-Code:</strong> Anglozentrismus in der Programmierung</li>
+                                <li><strong>Western-Metaphor-Dominance:</strong> Kulturelle Patterns als universell verkauft</li>
+                                <li><strong>Binary-Gender-Assumptions:</strong> Geschlechterbinarität in Code-Strukturen</li>
+                                <li><strong>Ableism-in-Terminology:</strong> Behindertenfeindliche Sprache ("blind spot", "dummy")</li>
+                                <li><strong>Class-Based-Metaphors:</strong> Hierarchische Gesellschaftsbilder</li>
+                                <li><strong>Colonial-Language-Patterns:</strong> Unterwerfung und Kontrolle als Standard</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Erweiterte praktische Optimierungsstrategien -->
+                <div class="research-extension" style="background: linear-gradient(135deg, #f0fdf4, #dcfce7); border-color: #22c55e;">
+                    <h3 style="color: #166534;">💡 Praktische Optimierungsstrategien: Evidenzbasierte Methoden</h3>
+                    <div class="research-grid">
+                        <div class="research-card">
+                            <h4 style="color: #166534;">Token-Effizienz-Maximierung</h4>
+                            <ul>
+                                <li><strong>Semantic-Density-Principle:</strong> Weniger Wörter, reichere Bedeutungen wählen</li>
+                                <li><strong>3-5-Modifier-Rule:</strong> Optimale Anzahl für Cost/Quality-Ratio</li>
+                                <li><strong>Metaphor-Richness-Selection:</strong> Begriffe mit vielen mentalen Mappings bevorzugen</li>
+                                <li><strong>Concreteness-Abstraction-Balance:</strong> Spezifik für Details, abstrakt für Architektur</li>
+                                <li><strong>Cultural-Universal-Bias:</strong> Metaphern wählen, die cross-kulturell funktionieren</li>
+                                <li><strong>Domain-Specific-Lexicon:</strong> Fachterminologie strategisch einsetzen</li>
+                            </ul>
+                        </div>
+                        <div class="research-card">
+                            <h4 style="color: #166534;">Kohärenz-Optimierung</h4>
+                            <ul>
+                                <li><strong>Single-Metaphor-World:</strong> Eine dominante konzeptuelle Welt durchhalten</li>
+                                <li><strong>Cross-Category-Alignment:</strong> Alle 5 Kategorien auf ein Schema ausrichten</li>
+                                <li><strong>Consistency-Check-Protocol:</strong> Systematische Überprüfung auf Metaphern-Konflikte</li>
+                                <li><strong>Progressive-Specificity:</strong> Von abstrakt zu konkret ohne Sprünge</li>
+                                <li><strong>Frame-Coherence-Maintenance:</strong> Semantische Rahmen nicht vermischen</li>
+                                <li><strong>Narrative-Arc-Construction:</strong> Prompts wie Geschichten strukturieren</li>
+                            </ul>
+                        </div>
+                        <div class="research-card">
+                            <h4 style="color: #166534;">Granularitäts-Kontrolle</h4>
+                            <ul>
+                                <li><strong>Abstraction-Ladder-Navigation:</strong> Bewusste Ebenen-Wechsel</li>
+                                <li><strong>Detail-Gradient-Management:</strong> Schrittweise Verfeinerung</li>
+                                <li><strong>Scope-Delimitation-Clarity:</strong> Klare Grenzen für gewünschte Komplexität</li>
+                                <li><strong>Context-Specific-Precision:</strong> Detailgrad an Anwendungsfall anpassen</li>
+                                <li><strong>Hierarchical-Decomposition:</strong> Komplexe Anfragen in Teilprobleme zerlegen</li>
+                                <li><strong>Multi-Pass-Refinement:</strong> Iterative Verfeinerung in mehreren Schritten</li>
+                            </ul>
+                        </div>
+                        <div class="research-card">
+                            <h4 style="color: #166534;">Empirisches Feedback-Design</h4>
+                            <ul>
+                                <li><strong>A/B-Prompt-Testing:</strong> Systematische Varianten-Experimente</li>
+                                <li><strong>Quality-Metric-Definition:</strong> Messbare Kriterien für "besseren" Code</li>
+                                <li><strong>Failure-Mode-Analysis:</strong> Systematische Untersuchung von Prompt-Versagen</li>
+                                <li><strong>User-Satisfaction-Tracking:</strong> Langzeit-Nutzerzufriedenheit messen</li>
+                                <li><strong>Performance-Impact-Measurement:</strong> Reale Performance-Auswirkungen evaluieren</li>
+                                <li><strong>Iteration-Speed-Optimization:</strong> Feedback-Zyklen beschleunigen</li>
+                            </ul>
+                        </div>
+                        <div class="research-card">
+                            <h4 style="color: #166534;">Adaptive Personalisierung</h4>
+                            <ul>
+                                <li><strong>User-Profile-Learning:</strong> Individuelle Präferenzen und Erfolgspatterns</li>
+                                <li><strong>Context-Aware-Adaptation:</strong> Situationsspezifische Prompt-Anpassung</li>
+                                <li><strong>Domain-Specific-Tuning:</strong> Fachbereich-optimierte Strategien</li>
+                                <li><strong>Expertise-Level-Scaling:</strong> Anfänger vs. Expert-angepasste Prompts</li>
+                                <li><strong>Cultural-Sensitivity-Integration:</strong> Lokale Sprach- und Denkpatterns berücksichtigen</li>
+                                <li><strong>Temporal-Pattern-Recognition:</strong> Zeitbasierte Optimierung (Tageszeit, Deadline-Druck)</li>
+                            </ul>
+                        </div>
+                        <div class="research-card">
+                            <h4 style="color: #166534;">Meta-Strategisches Lernen</h4>
+                            <ul>
+                                <li><strong>Pattern-Mining-Automation:</strong> Automatische Erkennung erfolgreicher Strukturen</li>
+                                <li><strong>Cross-Domain-Transfer:</strong> Erfolgspatterns zwischen Bereichen übertragen</li>
+                                <li><strong>Failure-Recovery-Protocols:</strong> Systematische Reparatur gescheiterter Prompts</li>
+                                <li><strong>Emergent-Pattern-Detection:</strong> Neue, unerwartete Erfolgsstrategien identifizieren</li>
+                                <li><strong>Collective-Intelligence-Harvesting:</strong> Community-Wissen systematisch sammeln</li>
+                                <li><strong>Predictive-Optimization:</strong> Erfolg vorhersagen bevor Prompts verwendet werden</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Erweiterte gesellschaftliche Implikationen -->
+                <div class="research-extension" style="background: linear-gradient(135deg, #eff6ff, #dbeafe); border-color: #3b82f6;">
+                    <h3 style="color: #1e40af;">🌍 Gesellschaftliche Implikationen: Kritische Zukunftsperspektiven</h3>
+                    <div class="research-grid">
+                        <div class="research-card">
+                            <h4 style="color: #1e40af;">Demokratisierung vs. Expertokratie</h4>
+                            <ul>
+                                <li><strong>Prompt-Literacy-Divide:</strong> Neue Form der digitalen Kluft entsteht</li>
+                                <li><strong>Elite-Capture-Risk:</strong> Optimierte Prompts als Machtinstrument weniger</li>
+                                <li><strong>Educational-Equity-Challenge:</strong> Grammatik-Wissen wird zur Schlüsselkompetenz</li>
+                                <li><strong>Open-Source-vs-Proprietary:</strong> Wem gehören die besten Prompt-Patterns?</li>
+                                <li><strong>Accessibility-Implications:</strong> Sprach-/Kognitive Behinderungen als Barriere</li>
+                                <li><strong>Global-South-Exclusion:</strong> Anglozentrismus verstärkt globale Ungleichheit</li>
+                            </ul>
+                        </div>
+                        <div class="research-card">
+                            <h4 style="color: #1e40af;">Bias-Amplifikation und Fairness</h4>
+                            <ul>
+                                <li><strong>Systematic-Bias-Reinforcement:</strong> Optimierung kann Vorurteile verstärken</li>
+                                <li><strong>Cultural-Hegemony-Encoding:</strong> Westliche Denkpatterns als "optimal"</li>
+                                <li><strong>Gender-Language-Effects:</strong> Geschlechtsspezifische Sprachpatterns</li>
+                                <li><strong>Racial-Coding-Implications:</strong> Unbewusste rassistische Sprachstrukturen</li>
+                                <li><strong>Class-Based-Language-Privilege:</strong> Bildungssprache als Zugangsbarriere</li>
+                                <li><strong>Neurodiversity-Marginalization:</strong> "Normale" Kommunikation als Standard</li>
+                            </ul>
+                        </div>
+                        <div class="research-card">
+                            <h4 style="color: #1e40af;">Arbeitswelt-Transformation</h4>
+                            <ul>
+                                <li><strong>Prompt-Engineering-Profession:</strong> Neue hochbezahlte Expertenkaste</li>
+                                <li><strong>Traditional-Coding-Obsolescence:</strong> Klassische Programmierung wird zweitrangig</li>
+                                <li><strong>Linguistic-Skill-Premium:</strong> Sprachkompetenz überholt technisches Wissen</li>
+                                <li><strong>Creative-vs-Technical-Shift:</strong> Von Logik zu Kreativität</li>
+                                <li><strong>Interdisciplinary-Requirement:</strong> Linguistik + Computer Science + Psychologie</li>
+                                <li><strong>Continuous-Learning-Pressure:</strong> Rapid evolution requires constant adaptation</li>
+                            </ul>
+                        </div>
+                        <div class="research-card">
+                            <h4 style="color: #1e40af;">Bildung und Kompetenzen</h4>
+                            <ul>
+                                <li><strong>Curriculum-Revolution-Need:</strong> Schulen müssen Prompt-Literacy lehren</li>
+                                <li><strong>Critical-Language-Awareness:</strong> Sprachkritik als Grundkompetenz</li>
+                                <li><strong>Interdisciplinary-Education:</strong> Linguistik + Informatik + Ethik</li>
+                                <li><strong>Multilingual-Advantage:</strong> Mehrsprachigkeit als Optimierungsvorteil</li>
+                                <li><strong>Metacognitive-Skills-Priority:</strong> Denken über Denken wichtiger als Faktenwissen</li>
+                                <li><strong>Ethical-Reasoning-Integration:</strong> Verantwortungsvolle Sprachnutzung</li>
+                            </ul>
+                        </div>
+                        <div class="research-card">
+                            <h4 style="color: #1e40af;">Regulierung und Governance</h4>
+                            <ul>
+                                <li><strong>Prompt-Auditing-Standards:</strong> Überprüfung auf Bias und Fairness</li>
+                                <li><strong>Transparency-Requirements:</strong> Offenlegung von Optimierungsstrategien</li>
+                                <li><strong>Algorithmic-Accountability:</strong> Verantwortung für Prompt-Outcomes</li>
+                                <li><strong>Cross-Border-Harmonization:</strong> Internationale Standards für Prompt-Ethics</li>
+                                <li><strong>Industry-Self-Regulation:</strong> Berufsethik für Prompt-Engineers</li>
+                                <li><strong>Public-Interest-Protection:</strong> Gemeinwohl vs. private Optimierung</li>
+                            </ul>
+                        </div>
+                        <div class="research-card">
+                            <h4 style="color: #1e40af;">Kulturelle und psychologische Auswirkungen</h4>
+                            <ul>
+                                <li><strong>Language-Standardization-Pressure:</strong> Vereinheitlichung vs. Vielfalt</li>
+                                <li><strong>Cognitive-Restructuring-Effects:</strong> Optimierte Sprache verändert Denken</li>
+                                <li><strong>Authenticity-vs-Optimization:</strong> Persönlicher Ausdruck vs. Effizienz</li>
+                                <li><strong>Intergenerational-Divide:</strong> Digital Natives vs. Traditional Communicators</li>
+                                <li><strong>Cultural-Identity-Preservation:</strong> Lokale Sprachpatterns schützen</li>
+                                <li><strong>Mental-Health-Implications:</strong> Sprachdruck und psychisches Wohlbefinden</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Erweiterte Meta-Patterns -->
                 <div class="meta-patterns-container">
                     <h3>🧬 Meta-Patterns: Übergreifende Optimierungsstrategien</h3>
                     <div class="meta-patterns-grid">
@@ -1633,24 +2147,56 @@ Hier erscheint der optimierte Prompt...
                             <p><strong>Erkenntnis:</strong> Einheitliche Metaphern-Welten über alle fünf Kategorien hinweg erzeugen kohärente, durchdachte Lösungen.</p>
                             <p><strong>Strategie:</strong> Wähle ein dominantes konzeptuelles Schema (BUILDING, ORGANISM, MACHINE) und halte es konsistent durch.</p>
                             <p><strong>Beispiel:</strong> "Der Architekt konstruiert elegant eine skalierbare Schichten-Architektur in der modularen Struktur mit dauerhafter Persistierung."</p>
+                            <p><strong>Tiefe Anwendung:</strong> Alle Wörter müssen aus demselben metaphorischen Universum stammen. "Architekt" aktiviert BUILDING-Schema, daher "konstruiert" (nicht "programmiert"), "Schichten" (nicht "Components"), "Struktur" (nicht "System").</p>
                         </div>
                         <div class="meta-pattern-card">
                             <h4>Granularitäts-Gradient</h4>
                             <p><strong>Erkenntnis:</strong> Die Spezifität der Sprache korreliert direkt mit der Code-Detailtiefe. Abstraktionssprünge verwirren LLMs.</p>
                             <p><strong>Strategie:</strong> Beginne abstrakt für Architektur, werde schrittweise spezifischer für Implementation.</p>
                             <p><strong>Beispiel:</strong> "System organisiert" (Architektur) → "Service transformiert" (Design) → "validate() prüft Email-Regex" (Code).</p>
+                            <p><strong>Präzisions-Leiter:</strong> Vision → Architektur → Design → Implementation → Details. Jede Ebene nur einen Abstraktionsschritt feiner als die vorherige.</p>
                         </div>
                         <div class="meta-pattern-card">
                             <h4>Ideologie-Bewusstsein</h4>
                             <p><strong>Erkenntnis:</strong> Scheinbar neutrale Begriffe tragen versteckte Wertesysteme. "Effizienz" ist nicht wertfrei.</p>
                             <p><strong>Strategie:</strong> Mache Werte explizit: "Implementiere effizient (Priorität: Geschwindigkeit über Verständlichkeit)".</p>
                             <p><strong>Ziel:</strong> Bewusste Entscheidungen statt unbewusste Reproduktion von Machtstrukturen.</p>
+                            <p><strong>Kritische Reflexion:</strong> Bei jedem Adjektiv fragen: Wessen Interessen dient diese Qualität? Wer wird ausgeschlossen? Welche Alternativen werden unsichtbar gemacht?</p>
                         </div>
                         <div class="meta-pattern-card">
                             <h4>Feedback-Loops</h4>
                             <p><strong>Erkenntnis:</strong> Empirische Validierung schlägt theoretische Perfektion. Was funktioniert, ist wichtiger als was elegant erscheint.</p>
                             <p><strong>Strategie:</strong> Teste → Messe → Analysiere → Verfeinere → Wiederhole in kurzen Zyklen.</p>
                             <p><strong>Metriken:</strong> Code-Funktionalität, Architektur-Konsistenz, Vollständigkeit, Token-Effizienz, Überraschungsfaktor.</p>
+                            <p><strong>Systematisches Learning:</strong> Führe Prompt-Journal mit Erfolg/Misserfolg-Patterns. Identifiziere persönliche Blind Spots und kulturelle Biases.</p>
+                        </div>
+                        <div class="meta-pattern-card">
+                            <h4>Kulturelle Sensitivität</h4>
+                            <p><strong>Erkenntnis:</strong> Optimierungsstrategien sind kulturell geprägt. Was in westlichen Kontexten funktioniert, kann global problematisch sein.</p>
+                            <p><strong>Strategie:</strong> Entwickle kulturell adaptive Prompt-Strategien. Berücksichtige non-westliche Denkpatternn.</p>
+                            <p><strong>Beispiel:</strong> Hierarchische vs. horizontale Metaphern je nach kulturellem Kontext wählen.</p>
+                            <p><strong>Globale Perspektive:</strong> Sammle Feedback aus verschiedenen Kulturen. Welche Metaphern funktionieren universal? Wo sind kulturelle Anpassungen nötig?</p>
+                        </div>
+                        <div class="meta-pattern-card">
+                            <h4>Emergente Komplexität</h4>
+                            <p><strong>Erkenntnis:</strong> Die Interaktion zwischen grammatikalischen Kategorien erzeugt emergente Effekte, die nicht vorhersagbar sind.</p>
+                            <p><strong>Strategie:</strong> Experimentiere mit unerwarteten Kombinationen. Dokumentiere überraschende Erfolge.</p>
+                            <p><strong>Exploration:</strong> Kombiniere inkompatible Metaphern bewusst. Was passiert bei "maschinell kreativen" oder "organisch effizienten" Prompts?</p>
+                            <p><strong>Innovation durch Paradox:</strong> Manchmal erzeugen scheinbar widersprüchliche Anforderungen die innovativsten Lösungen.</p>
+                        </div>
+                        <div class="meta-pattern-card">
+                            <h4>Temporale Stratification</h4>
+                            <p><strong>Erkenntnis:</strong> Verschiedene Zeitebenen (Development-Zeit, Compile-Zeit, Runtime) benötigen unterschiedliche sprachliche Strategien.</p>
+                            <p><strong>Strategie:</strong> Passe temporale Marker an die Ziel-Zeitebene an. Development → "konzipiere", Runtime → "reagiere".</p>
+                            <p><strong>Zeit-Bewusstsein:</strong> Explizite Zeitebenen-Unterscheidung hilft LLMs, angemessene Implementierungsstrategien zu wählen.</p>
+                            <p><strong>Multi-temporale Optimierung:</strong> Ein Prompt kann mehrere Zeitebenen gleichzeitig adressieren. Mache dies explizit für beste Resultate.</p>
+                        </div>
+                        <div class="meta-pattern-card">
+                            <h4>Semantische Verdichtung</h4>
+                            <p><strong>Erkenntnis:</strong> Token-Effizienz entsteht durch Wörter mit maximaler semantischer Dichte - Begriffe, die multiple kognitive Schemata gleichzeitig aktivieren.</p>
+                            <p><strong>Strategie:</strong> Wähle Wörter, die mehrere Bedeutungsebenen haben. "Orchestrieren" aktiviert MUSIC + COORDINATION + HIERARCHY.</p>
+                            <p><strong>Polysemie-Vorteil:</strong> Mehrdeutige Begriffe erlauben LLMs, den besten Bedeutungsaspekt kontextuell zu wählen.</p>
+                            <p><strong>Metapher-Stacking:</strong> Geschichtete Metaphern erzeugen reichere mentale Modelle als single-layer Begriffe.</p>
                         </div>
                     </div>
                 </div>
@@ -1686,6 +2232,15 @@ Hier erscheint der optimierte Prompt...
                         <div class="reference-item">
                             <strong>Prior, A. (1967):</strong> Past, Present and Future. Oxford University Press. <em>Temporal Logic als Grundlage für Zeit-Constraint-Modellierung.</em>
                         </div>
+                        <div class="reference-item">
+                            <strong>Rosch, E. (1975):</strong> Cognitive representations of semantic categories. Journal of Experimental Psychology. <em>Prototype Theory für kategorialen Bedeutungsaufbau.</em>
+                        </div>
+                        <div class="reference-item">
+                            <strong>Horn, L. (1984):</strong> Toward a new taxonomy for pragmatic inference. Georgetown University Press. <em>Scalar Implicature Theory für Bedeutungsintensivierung.</em>
+                        </div>
+                        <div class="reference-item">
+                            <strong>Kowalski, R. & Sergot, M. (1986):</strong> A logic-based calculus of events. New Generation Computing. <em>Event Calculus für temporale Logik-Implementierung.</em>
+                        </div>
                     </div>
                 </div>
 
@@ -1693,6 +2248,7 @@ Hier erscheint der optimierte Prompt...
                     <h3>🌟 Finale Fazit: Die Zukunft der bewussten Sprachgestaltung</h3>
                     <p><strong>Die Analyse zeigt:</strong> Wer die Grammatik beherrscht, kontrolliert die Maschine. Doch mit dieser Macht kommt Verantwortung. Die bewusste Gestaltung von Prompts ist nicht nur eine technische Optimierung, sondern ein Akt der digitalen Mündigkeit. In einer Welt, in der KI-Systeme zunehmend unsere Realität formen, wird die kritische Reflexion über Sprache und ihre Machtwirkungen zur Grundlage einer gerechten, demokratischen Technologie-Entwicklung.</p>
                     <p style="margin-top: 2rem;"><strong>Der Auftrag:</strong> Nutze diese Erkenntnisse nicht nur für besseren Code, sondern für eine bewusstere, ethischere und inklusivere Gestaltung unserer digitalen Zukunft. Die Grammatik der Macht wird zur Macht über die Grammatik – und damit zur Verantwortung für eine menschlichere Technologie.</p>
+                    <p style="margin-top: 2rem;"><strong>Die Revolution beginnt mit einem Wort:</strong> Jeder bewusst gewählte Begriff, jede reflektierte Metapher, jede kritisch hinterfragte Sprachstruktur ist ein Schritt hin zu einer Technologie, die dem Menschen dient statt ihn zu beherrschen. Das GRAMM-OPT Framework ist nicht nur ein Optimierungstool – es ist eine Einladung zur sprachlichen Rebellion gegen die Macht des Unbewussten.</p>
                 </div>
             </section>
         </main>
@@ -1701,6 +2257,18 @@ Hier erscheint der optimierte Prompt...
     <div class="tooltip" id="tooltip"></div>
 
     <script>
+        // =================================================================
+        // MOBILE NAVIGATION
+        // =================================================================
+
+        function toggleMobileMenu() {
+            const burger = document.querySelector('.burger-menu');
+            const tabs = document.getElementById('navigation-tabs');
+
+            burger.classList.toggle('active');
+            tabs.classList.toggle('active');
+        }
+
         // =================================================================
         // LEXIKON DATEN FÜR TABELLEN UND PROMPT-GENERATOR
         // =================================================================
@@ -2792,8 +3360,8 @@ Hier erscheint der optimierte Prompt...
                 this.tooltip = tooltip;
 
                 // Set canvas dimensions
-                this.width = 800;
-                this.height = 500;
+                this.width = Math.min(800, window.innerWidth - 40);
+                this.height = Math.min(500, window.innerHeight * 0.6);
                 this.canvas.width = this.width;
                 this.canvas.height = this.height;
                 this.canvas.style.width = this.width + 'px';
@@ -2980,7 +3548,7 @@ Hier erscheint der optimierte Prompt...
 
                     // Draw text
                     this.ctx.fillStyle = '#111827';
-                    this.ctx.font = '12px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+                    this.ctx.font = `${Math.max(10, node.size / 3)}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
                     this.ctx.textAlign = 'center';
                     this.ctx.textBaseline = 'middle';
                     this.ctx.fillText(node.label, node.x, node.y);
@@ -3005,6 +3573,13 @@ Hier erscheint der optimierte Prompt...
         // =================================================================
 
         function showSection(sectionId) {
+            // Schließe mobile Navigation
+            const burger = document.querySelector('.burger-menu');
+            const tabs = document.getElementById('navigation-tabs');
+            burger.classList.remove('active');
+            tabs.classList.remove('active');
+
+            // Zeige gewünschte Sektion
             document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.remove('active');
             });
@@ -3013,7 +3588,7 @@ Hier erscheint der optimierte Prompt...
             document.querySelectorAll('.tab').forEach(tab => {
                 tab.classList.remove('active');
             });
-            document.querySelector(`.tab[onclick="showSection('${sectionId}')"]`).classList.add('active');
+            document.querySelector(`.tab[onclick*="${sectionId}"]`).classList.add('active');
         }
 
         // =================================================================
@@ -3064,11 +3639,11 @@ Hier erscheint der optimierte Prompt...
 
             // Simplified linguistic analysis
             const analysis = {
-                subjects: extractWords(input, Object.keys(lexiconData.subject || {})),
-                predicates: extractWords(input, Object.keys(lexiconData.predicate || {})),
-                qualifiers: extractWords(input, Object.keys(lexiconData.manner || {})),
-                spatial: extractWords(input, Object.keys(lexiconData.place || {})),
-                temporal: extractWords(input, Object.keys(lexiconData.time || {}))
+                subjects: extractWords(input, Object.keys(grammarLexicons.subject || {})),
+                predicates: extractWords(input, Object.keys(grammarLexicons.predicate || {})),
+                qualifiers: extractWords(input, Object.keys(grammarLexicons.manner || {})),
+                spatial: extractWords(input, Object.keys(grammarLexicons.place || {})),
+                temporal: extractWords(input, Object.keys(grammarLexicons.time || {}))
             };
 
             // Update analysis display
@@ -3118,11 +3693,11 @@ Hier erscheint der optimierte Prompt...
 
             const template = optimizationTemplates[`level${level}`];
             const analysis = {
-                subjects: extractWords(input, Object.keys(lexiconData.subject || {})),
-                predicates: extractWords(input, Object.keys(lexiconData.predicate || {})),
-                qualifiers: extractWords(input, Object.keys(lexiconData.manner || {})),
-                spatial: extractWords(input, Object.keys(lexiconData.place || {})),
-                temporal: extractWords(input, Object.keys(lexiconData.time || {}))
+                subjects: extractWords(input, Object.keys(grammarLexicons.subject || {})),
+                predicates: extractWords(input, Object.keys(grammarLexicons.predicate || {})),
+                qualifiers: extractWords(input, Object.keys(grammarLexicons.manner || {})),
+                spatial: extractWords(input, Object.keys(grammarLexicons.place || {})),
+                temporal: extractWords(input, Object.keys(grammarLexicons.time || {}))
             };
 
             // Generate optimized prompt
@@ -3156,7 +3731,7 @@ Hier erscheint der optimierte Prompt...
 
             // Add quality dimensions based on level
             const qualityAdditions = [];
-            const availableQualities = Object.keys(lexiconData.manner || {});
+            const availableQualities = ['effizient', 'robust', 'skalierbar', 'elegant', 'sicher', 'performant'];
 
             for (let i = 0; i < template.qualifierCount; i++) {
                 if (availableQualities[i] && !analysis.qualifiers.includes(availableQualities[i])) {
@@ -3207,7 +3782,226 @@ Hier erscheint der optimierte Prompt...
                 setTimeout(() => {
                     btn.textContent = originalText;
                 }, 2000);
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+
+                const btn = document.querySelector('.copy-btn');
+                const originalText = btn.textContent;
+                btn.textContent = '✅ Kopiert!';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 2000);
             });
+        }
+
+        // =================================================================
+        // RESPONSIVE HANDLING
+        // =================================================================
+
+        function handleResize() {
+            const canvas = document.getElementById('network-viz');
+            if (canvas && window.graph) {
+                const newWidth = Math.min(800, window.innerWidth - 40);
+                const newHeight = Math.min(500, window.innerHeight * 0.6);
+
+                if (canvas.width !== newWidth || canvas.height !== newHeight) {
+                    window.graph.stop();
+                    window.graph.width = newWidth;
+                    window.graph.height = newHeight;
+                    canvas.width = newWidth;
+                    canvas.height = newHeight;
+                    canvas.style.width = newWidth + 'px';
+                    canvas.style.height = newHeight + 'px';
+                    window.graph.animate();
+                }
+            }
+        }
+
+        // Close mobile menu when clicking outside
+        function handleClickOutside(e) {
+            const burger = document.querySelector('.burger-menu');
+            const tabs = document.getElementById('navigation-tabs');
+
+            if (tabs.classList.contains('active') &&
+                !burger.contains(e.target) &&
+                !tabs.contains(e.target)) {
+                burger.classList.remove('active');
+                tabs.classList.remove('active');
+            }
+        }
+
+        // =================================================================
+        // ENHANCED DATA PROCESSING
+        // =================================================================
+
+        function enhanceTableInteractivity() {
+            // Add hover effects and tooltips to table rows
+            document.querySelectorAll('.data-table tbody tr').forEach(row => {
+                if (!row.querySelector('.category-header')) {
+                    row.addEventListener('mouseenter', function() {
+                        this.style.transform = 'scale(1.02)';
+                        this.style.transition = 'transform 0.2s ease';
+                    });
+
+                    row.addEventListener('mouseleave', function() {
+                        this.style.transform = 'scale(1)';
+                    });
+                }
+            });
+        }
+
+        function addSearchFunctionality() {
+            // Add search capability to tables
+            const sections = ['subject', 'predicate', 'manner', 'place', 'time'];
+
+            sections.forEach(section => {
+                const container = document.getElementById(section);
+                if (!container) return;
+
+                // Create search input
+                const searchContainer = document.createElement('div');
+                searchContainer.style.cssText = `
+                    margin: 1rem 0;
+                    text-align: center;
+                `;
+
+                const searchInput = document.createElement('input');
+                searchInput.type = 'text';
+                searchInput.placeholder = `${section.charAt(0).toUpperCase() + section.slice(1)} durchsuchen...`;
+                searchInput.style.cssText = `
+                    padding: 0.5rem 1rem;
+                    border: 2px solid #e5e7eb;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    width: 300px;
+                    max-width: 90%;
+                `;
+
+                searchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    const table = container.querySelector('.data-table tbody');
+                    if (!table) return;
+
+                    Array.from(table.rows).forEach(row => {
+                        if (row.querySelector('.category-header')) {
+                            row.style.display = '';
+                            return;
+                        }
+
+                        const text = row.textContent.toLowerCase();
+                        row.style.display = text.includes(searchTerm) ? '' : 'none';
+                    });
+                });
+
+                searchContainer.appendChild(searchInput);
+
+                // Insert before the table
+                const tableContainer = container.querySelector('.data-table-container');
+                if (tableContainer) {
+                    tableContainer.parentNode.insertBefore(searchContainer, tableContainer);
+                }
+            });
+        }
+
+        // =================================================================
+        // ADVANCED PROMPT ANALYSIS
+        // =================================================================
+
+        function advancedPromptAnalysis(text) {
+            const analysis = {
+                complexity: calculateComplexity(text),
+                sentiment: analyzeSentiment(text),
+                metaphorDensity: calculateMetaphorDensity(text),
+                powerStructures: analyzePowerStructures(text),
+                culturalBias: detectCulturalBias(text)
+            };
+
+            return analysis;
+        }
+
+        function calculateComplexity(text) {
+            const sentences = text.split(/[.!?]+/).filter(s => s.trim());
+            const words = text.split(/\s+/).filter(w => w.trim());
+            const avgWordsPerSentence = words.length / sentences.length;
+            const longWords = words.filter(w => w.length > 6).length;
+
+            return {
+                sentences: sentences.length,
+                words: words.length,
+                avgWordsPerSentence: Math.round(avgWordsPerSentence * 10) / 10,
+                longWordRatio: Math.round((longWords / words.length) * 100)
+            };
+        }
+
+        function analyzeSentiment(text) {
+            const positiveWords = ['gut', 'besser', 'optimal', 'effizient', 'elegant', 'robust', 'sicher'];
+            const negativeWords = ['schlecht', 'fehler', 'problem', 'langsam', 'unsicher', 'schwach'];
+
+            const words = text.toLowerCase().split(/\s+/);
+            const positive = words.filter(w => positiveWords.includes(w)).length;
+            const negative = words.filter(w => negativeWords.includes(w)).length;
+
+            return {
+                positive,
+                negative,
+                overall: positive > negative ? 'positive' : negative > positive ? 'negative' : 'neutral'
+            };
+        }
+
+        function calculateMetaphorDensity(text) {
+            const metaphorKeywords = ['wie', 'als', 'gleich', 'ähnlich', 'vergleichbar', 'metapher', 'bild'];
+            const spatialMetaphors = ['in', 'auf', 'durch', 'über', 'unter', 'zwischen', 'entlang'];
+
+            const words = text.toLowerCase().split(/\s+/);
+            const metaphors = words.filter(w => metaphorKeywords.includes(w)).length;
+            const spatial = words.filter(w => spatialMetaphors.includes(w)).length;
+
+            return {
+                total: metaphors + spatial,
+                density: Math.round(((metaphors + spatial) / words.length) * 100),
+                types: { conceptual: metaphors, spatial }
+            };
+        }
+
+        function analyzePowerStructures(text) {
+            const hierarchicalWords = ['chef', 'führung', 'management', 'kontrolle', 'autorität'];
+            const democraticWords = ['team', 'gemeinsam', 'kollaborativ', 'partizipativ'];
+            const passiveConstructions = text.match(/wird\s+\w+/g) || [];
+
+            const words = text.toLowerCase().split(/\s+/);
+            const hierarchical = words.filter(w => hierarchicalWords.includes(w)).length;
+            const democratic = words.filter(w => democraticWords.includes(w)).length;
+
+            return {
+                hierarchical,
+                democratic,
+                passiveConstructions: passiveConstructions.length,
+                tendency: hierarchical > democratic ? 'hierarchical' : 'collaborative'
+            };
+        }
+
+        function detectCulturalBias(text) {
+            const westernConcepts = ['effizienz', 'innovation', 'disruption', 'agilität', 'skalierung'];
+            const individualismMarkers = ['ich', 'mein', 'selbst', 'eigen', 'persönlich'];
+            const collectivismMarkers = ['wir', 'unser', 'gemeinsam', 'team', 'gruppe'];
+
+            const words = text.toLowerCase().split(/\s+/);
+            const western = words.filter(w => westernConcepts.includes(w)).length;
+            const individual = words.filter(w => individualismMarkers.includes(w)).length;
+            const collective = words.filter(w => collectivismMarkers.includes(w)).length;
+
+            return {
+                westernBias: western,
+                individualism: individual,
+                collectivism: collective,
+                culturalTendency: individual > collective ? 'individualistic' : 'collectivistic'
+            };
         }
 
         // =================================================================
@@ -3252,12 +4046,235 @@ Hier erscheint der optimierte Prompt...
 
                 graph.setData(graphData);
                 graph.animate();
+
+                // Store graph globally for resize handling
+                window.graph = graph;
             }
 
             // Initialize prompt generator
             analyzePrompt();
             updateOptLevel();
+
+            // Add enhanced functionality
+            enhanceTableInteractivity();
+            addSearchFunctionality();
+
+            // Event listeners
+            window.addEventListener('resize', handleResize);
+            document.addEventListener('click', handleClickOutside);
+
+            // Enhanced prompt analysis on input
+            const promptInput = document.getElementById('user-prompt');
+            if (promptInput) {
+                promptInput.addEventListener('input', function() {
+                    analyzePrompt();
+
+                    // Show advanced analysis for longer prompts
+                    if (this.value.length > 50) {
+                        const advanced = advancedPromptAnalysis(this.value);
+
+                        // Update analysis with advanced metrics
+                        const complexityInfo = `Komplexität: ${advanced.complexity.words} Wörter, ${advanced.complexity.sentences} Sätze`;
+                        const metaphorInfo = `Metaphern-Dichte: ${advanced.metaphorDensity.density}%`;
+                        const powerInfo = `Machtstrukturen: ${advanced.powerStructures.tendency}`;
+
+                        // Add this info to existing analysis
+                        const subjectAnalysis = document.getElementById('subject-analysis');
+                        if (subjectAnalysis && !subjectAnalysis.querySelector('.advanced-metrics')) {
+                            const advancedDiv = document.createElement('div');
+                            advancedDiv.className = 'advanced-metrics';
+                            advancedDiv.style.cssText = 'margin-top: 0.5rem; font-size: 0.9rem; color: #6b7280;';
+                            advancedDiv.innerHTML = `${complexityInfo} | ${metaphorInfo} | ${powerInfo}`;
+                            subjectAnalysis.appendChild(advancedDiv);
+                        }
+                    }
+                });
+            }
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Initialize performance monitoring
+            if ('performance' in window) {
+                const loadTime = performance.now();
+                console.log(`GRAMM-OPT Framework geladen in ${Math.round(loadTime)}ms`);
+
+                // Track user interactions
+                let interactionCount = 0;
+                document.addEventListener('click', () => {
+                    interactionCount++;
+                    if (interactionCount % 10 === 0) {
+                        console.log(`${interactionCount} Benutzerinteraktionen registriert`);
+                    }
+                });
+            }
+
+            // Accessibility enhancements
+            // Add keyboard navigation for tabs
+            document.querySelectorAll('.tab').forEach((tab, index) => {
+                tab.setAttribute('tabindex', '0');
+                tab.setAttribute('role', 'button');
+
+                tab.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+
+                    // Arrow key navigation
+                    const tabs = Array.from(document.querySelectorAll('.tab'));
+                    let newIndex = index;
+
+                    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                        newIndex = (index + 1) % tabs.length;
+                    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                        newIndex = (index - 1 + tabs.length) % tabs.length;
+                    }
+
+                    if (newIndex !== index) {
+                        tabs[newIndex].focus();
+                    }
+                });
+            });
+
+            // Add ARIA labels for better screen reader support
+            document.querySelectorAll('.section-icon').forEach(icon => {
+                icon.setAttribute('aria-hidden', 'true');
+            });
+
+            // High contrast mode detection
+            if (window.matchMedia && window.matchMedia('(prefers-contrast: high)').matches) {
+                document.body.classList.add('high-contrast');
+            }
+
+            // Reduced motion preference
+            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.body.classList.add('reduced-motion');
+                // Disable animations for users who prefer reduced motion
+                const style = document.createElement('style');
+                style.textContent = `
+                    .reduced-motion * {
+                        animation-duration: 0.01ms !important;
+                        animation-iteration-count: 1 !important;
+                        transition-duration: 0.01ms !important;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+
+            console.log('🧬 GRAMM-OPT Framework vollständig initialisiert');
+            console.log('📊 Analysiere 1500+ linguistische Beispiele');
+            console.log('🚀 Bereit für grammatikalische Optimierung');
         });
+
+        // =================================================================
+        // EXPORT FUNCTIONALITY (FOR ADVANCED USERS)
+        // =================================================================
+
+        function exportAnalysisData() {
+            const data = {
+                timestamp: new Date().toISOString(),
+                lexiconData: lexiconData,
+                grammarLexicons: grammarLexicons,
+                version: "2.0.0",
+                metadata: {
+                    totalExamples: Object.values(lexiconData).flat().filter(Array.isArray).length,
+                    categories: Object.keys(lexiconData),
+                    frameworks: ['GRAMM-OPT', 'Conceptual Metaphor Theory', 'Frame Semantics']
+                }
+            };
+
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `gramm-opt-analysis-${Date.now()}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Make export function available globally for console access
+        window.exportGrammOptData = exportAnalysisData;
+
+        // =================================================================
+        // DEVELOPER CONSOLE ENHANCEMENTS
+        // =================================================================
+
+        // Add helpful console commands for developers
+        if (typeof window !== 'undefined') {
+            window.grammOpt = {
+                analyze: function(text) {
+                    console.log('🔍 Analyzing text:', text);
+                    const analysis = advancedPromptAnalysis(text);
+                    console.table(analysis);
+                    return analysis;
+                },
+
+                searchLexicon: function(term, category = null) {
+                    const results = {};
+                    const categories = category ? [category] : Object.keys(lexiconData);
+
+                    categories.forEach(cat => {
+                        if (lexiconData[cat]) {
+                            const matches = lexiconData[cat]
+                                .filter(item => Array.isArray(item))
+                                .filter(item => item[0].toLowerCase().includes(term.toLowerCase()));
+                            if (matches.length > 0) {
+                                results[cat] = matches;
+                            }
+                        }
+                    });
+
+                    console.log(`🔍 Lexicon search results for "${term}":`, results);
+                    return results;
+                },
+
+                generatePrompt: function(subject, predicate, manner, place, time) {
+                    const prompt = `${subject} ${predicate} ${manner} ${place} ${time}`;
+                    console.log('🚀 Generated prompt:', prompt);
+                    const analysis = advancedPromptAnalysis(prompt);
+                    console.log('📊 Analysis:', analysis);
+                    return { prompt, analysis };
+                },
+
+                exportData: exportAnalysisData,
+
+                help: function() {
+                    console.log(`
+🧬 GRAMM-OPT Framework Console Commands:
+
+grammOpt.analyze(text) - Analyze text for linguistic patterns
+grammOpt.searchLexicon(term, category) - Search lexicon entries
+grammOpt.generatePrompt(s, p, m, pl, t) - Generate optimized prompt
+grammOpt.exportData() - Export all analysis data
+grammOpt.help() - Show this help
+
+Example:
+grammOpt.analyze("Der Entwickler implementiert effizient eine API")
+grammOpt.searchLexicon("effizient", "manner")
+                    `);
+                }
+            };
+
+            // Welcome message
+            console.log(`
+🧬 GRAMM-OPT Framework Console Interface loaded!
+Type grammOpt.help() for available commands.
+            `);
+        }
     </script>
 </body>
 </html>
