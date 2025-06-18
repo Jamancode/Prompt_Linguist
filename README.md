@@ -1,14 +1,6 @@
 # Prompt_Linguist
 Linguistische behandlung in Bezug auf Prompting mit LLM's
 
-Absolut! Gerne gebe ich Ihnen eine sehr ausführliche und strukturierte Beschreibung des Codes, seiner Inhalte, Funktionen und Verwendungszwecke.
-
-Das vorliegende Dokument ist nicht nur eine einfache Webseite, sondern eine hochentwickelte, in sich geschlossene **digitale wissenschaftliche Arbeit oder ein interaktiver Fachartikel**. Es kombiniert theoretische Analyse mit einem praktischen, interaktiven Werkzeug.
-
-Hier ist die detaillierte Aufschlüsselung:
-
----
-
 ### 1. Gesamtüberblick und Thema
 
 **Was ist das?**
@@ -115,9 +107,3 @@ Der JavaScript-Teil macht die Seite zu einer echten Web-Anwendung.
 
 4.  **Bewusstseinsbildung:**
     *   Ein zentraler Zweck ist die Sensibilisierung für die **Macht der Sprache in der Technologie**. Die Seite zeigt auf, dass technische Begriffe nie neutral sind, sondern immer Wertesysteme (z.B. Effizienz über alles, unendliches Wachstum) transportieren, die sowohl menschliches Denken als auch maschinelles Verhalten prägen. Sie ist ein Aufruf zur **digitalen Mündigkeit** und zu einem bewussteren, ethischeren Umgang mit Sprache in der KI-Ära.
-
----
-
-### Zusammenfassung
-
-Zusammenfassend lässt sich sagen, dass dieser Code eine **außergewöhnlich tiefgründige und gut umgesetzte interaktive Publikation** darstellt. Sie verbindet auf beeindruckende Weise wissenschaftliche Theorie, empirische Analyse und ein praktisches Werkzeug. Technisch ist sie modern, sauber strukturiert und interaktiv. Inhaltlich bietet sie eine einzigartige Perspektive auf die Beziehung zwischen Sprache, KI und Macht, die weit über typische "Prompt-Engineering-Guides" hinausgeht.
