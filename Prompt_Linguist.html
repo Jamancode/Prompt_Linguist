@@ -705,6 +705,36 @@
         }
 
         @media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+        align-items: flex-start; /* Align toggle button and tabs container to the start */
+    }
+    #mobile-nav-toggle {
+        display: block; /* Or inline-block, depending on desired flow */
+    }
+    .tabs {
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+        width: 100%; /* Take full width when open */
+        align-items: stretch; /* Make tabs stretch to full width */
+        /* gap: 0.5rem; /* Removed as it's not very effective with column display and borders */
+    }
+    .tabs.tabs-open {
+        display: flex;
+    }
+    .tab {
+        padding: 0.5rem 1rem; /* Existing mobile style */
+        font-size: 0.9rem; /* Existing mobile style */
+        width: 100%; /* Make tabs take full-width */
+        text-align: left;
+        border-bottom: 1px solid #e5e7eb; /* Separator for vertical items */
+        border-radius: 0; /* Optional: cleaner look for vertical list */
+        margin-bottom: 0; /* Reset margin if any */
+    }
+    .tab:last-child {
+        border-bottom: none; /* Remove border for the last tab */
+    }
+
     .thesis-header {
         padding: 2rem 1rem;
         border-left-width: 5px;
@@ -722,17 +752,21 @@
             .framework-grid { grid-template-columns: 1fr; }
             .meta-patterns-grid { grid-template-columns: 1fr; }
             .references-grid { grid-template-columns: 1fr; }
-
-    .tabs {
-        gap: 0.5rem;
-    }
-    .tab {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
     .analytical-intro p {
         font-size: 1rem;
     }
+        }
+
+        #mobile-nav-toggle {
+            display: none; /* Hidden by default */
+            font-size: 1.5rem;
+            background-color: var(--light);
+            color: var(--dark);
+            border: 1px solid var(--dark);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            margin-bottom: 0.5rem; /* If nav becomes column */
+            align-self: flex-start; /* Align to the start of the flex container */
         }
     </style>
 </head>
@@ -745,6 +779,7 @@
         </header>
 
         <nav class="navigation">
+            <button type="button" id="mobile-nav-toggle">&#9776;</button>
             <div class="tabs">
                 <div class="tab active" onclick="showSection('subject')">
                     <span class="section-icon">👤</span> I. Subjekt
@@ -3274,6 +3309,18 @@ Hier erscheint der optimierte Prompt...
             analyzePrompt();
             updateOptLevel();
         });
+    </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+    const tabsContainer = document.querySelector('.tabs'); // Assuming there's only one .tabs element or the first one is correct
+
+    if (mobileNavToggle && tabsContainer) {
+        mobileNavToggle.addEventListener('click', function() {
+            tabsContainer.classList.toggle('tabs-open');
+        });
+    }
+});
     </script>
 </body>
 </html>
