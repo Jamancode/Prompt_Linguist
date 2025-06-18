@@ -705,7 +705,12 @@
         }
 
         @media (max-width: 768px) {
-            .thesis-header h1 { font-size: 2rem; }
+    .thesis-header {
+        padding: 2rem 1rem;
+        border-left-width: 5px;
+    }
+    .thesis-header h1 { font-size: 1.5rem; }
+    .thesis-header p { font-size: 1rem; }
             .section-title { font-size: 1.8rem; }
             .card-grid { grid-template-columns: 1fr; }
             .pattern-grid { grid-template-columns: 1fr; }
@@ -717,6 +722,17 @@
             .framework-grid { grid-template-columns: 1fr; }
             .meta-patterns-grid { grid-template-columns: 1fr; }
             .references-grid { grid-template-columns: 1fr; }
+
+    .tabs {
+        gap: 0.5rem;
+    }
+    .tab {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    .analytical-intro p {
+        font-size: 1rem;
+    }
         }
     </style>
 </head>
