@@ -724,21 +724,31 @@
     .tabs {
         display: none; /* Hidden by default on mobile */
         flex-direction: column;
-        width: 100%; /* Take full width when open */
+        /* width: 100%; */ /* Take full width when open - modified by tabs-open */
         align-items: stretch; /* Make tabs stretch to full width */
         /* gap: 0.5rem; /* Removed as it's not very effective with column display and borders */
     }
     .tabs.tabs-open {
         display: flex;
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+        right: 0;
+        bottom: 0; /* Stretch to bottom of viewport */
+        background-color: var(--dark);
+        z-index: 1000; /* Ensure it's above other content */
+        overflow-y: auto; /* Allow scrolling if content overflows */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
     .tab {
-        padding: 0.5rem 1rem; /* Existing mobile style */
-        font-size: 0.9rem; /* Existing mobile style */
+        padding: 0.8rem 1.5rem; /* Adjusted padding for overlay */
+        font-size: 1rem; /* Adjusted font size for overlay */
         width: 100%; /* Make tabs take full-width */
         text-align: left;
-        border-bottom: 1px solid #e5e7eb; /* Separator for vertical items */
-        border-radius: 0; /* Optional: cleaner look for vertical list */
-        margin-bottom: 0; /* Reset margin if any */
+        border-bottom: 1px solid rgba(249, 250, 251, 0.2); /* var(--light) with alpha for dark bg */
+        border-radius: 0;
+        margin-bottom: 0;
+        color: var(--light); /* Ensure text color is light for dark background */
     }
     .tab:last-child {
         border-bottom: none; /* Remove border for the last tab */
