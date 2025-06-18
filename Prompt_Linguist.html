@@ -706,11 +706,18 @@
 
         @media (max-width: 768px) {
     .navigation {
-        flex-direction: column;
-        align-items: flex-start; /* Align toggle button and tabs container to the start */
+        /* flex-direction and align-items removed to revert to default/prior mobile behavior */
     }
     #mobile-nav-toggle {
-        display: block; /* Or inline-block, depending on desired flow */
+        display: block; /* Or inline-block */
+        position: absolute;
+        top: 1.5rem;
+        right: 1rem;
+        z-index: 105; /* Ensure it's above header animations */
+        color: var(--light);
+        background-color: transparent;
+        border: 1px solid var(--light);
+        /* font-size and padding inherited from base styles are suitable */
     }
     .tabs {
         display: none; /* Hidden by default on mobile */
@@ -765,21 +772,20 @@
             border: 1px solid var(--dark);
             padding: 0.5rem 1rem;
             cursor: pointer;
-            margin-bottom: 0.5rem; /* If nav becomes column */
-            align-self: flex-start; /* Align to the start of the flex container */
+            /* margin-bottom and align-self removed as context changed */
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header class="thesis-header">
+            <button type="button" id="mobile-nav-toggle">&#9776;</button>
             <h1>Grammatikalische Macht & LLM-Optimierung</h1>
             <p>Eine umfassende Analyse der Wechselwirkungen zwischen grammatikalischen Strukturen, diskursiven Machtformationen und Large Language Model Interpretationen</p>
             <p class="evidence-claim">Diese erweiterte Analyse untersucht <strong>1000+ linguistische Beispiele</strong> über alle fünf grammatikalischen Kategorien, dokumentiert ihre <strong>kognitiven und technischen Wirkungen</strong> und entwickelt ein <strong>wissenschaftlich fundiertes Framework</strong> für die Optimierung von LLM-Prompts durch bewusste sprachliche Gestaltung.</p>
         </header>
 
         <nav class="navigation">
-            <button type="button" id="mobile-nav-toggle">&#9776;</button>
             <div class="tabs">
                 <div class="tab active" onclick="showSection('subject')">
                     <span class="section-icon">👤</span> I. Subjekt
