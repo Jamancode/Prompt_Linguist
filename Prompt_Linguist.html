@@ -963,6 +963,37 @@
                 font-size: 1.1rem;
             }
         }
+
+#scrollButtons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* High z-index to ensure buttons are on top */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between buttons */
+}
+
+#scrollButtons button {
+    background-color: var(--primary); /* Use existing primary color */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Circular buttons */
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+}
+
+#scrollButtons button:hover {
+    background-color: var(--secondary); /* Use existing secondary color for hover */
+}
+
+#scrollTopBtn {
+    display: none; /* Initially hidden */
+}
     </style>
 </head>
 <body>
@@ -4907,6 +4938,60 @@ grammOpt.searchLexicon("effizient", "manner")
 Type grammOpt.help() for available commands.
             `);
         }
+
+// Enhanced scroll buttons functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    const scrollBottomBtn = document.getElementById('scrollBottomBtn');
+
+    if (scrollTopBtn) {
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    } else {
+        console.error('Scroll to top button not found!');
+    }
+
+    if (scrollBottomBtn) {
+        scrollBottomBtn.addEventListener('click', () => {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        });
+    } else {
+        console.error('Scroll to bottom button not found!');
+    }
+
+    const handleScroll = () => {
+        // Scroll to top button visibility
+        if (scrollTopBtn) {
+            if (window.scrollY > 100) { // Show after 100px scroll
+                scrollTopBtn.style.display = 'block';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        }
+
+        // Scroll to bottom button visibility
+        if (scrollBottomBtn) {
+            // Hide when user is close to the bottom (e.g., last 100px of scrollable area)
+            if ((window.innerHeight + window.scrollY) >= (document.body.scrollHeight - 100)) {
+                scrollBottomBtn.style.display = 'none';
+            } else {
+                scrollBottomBtn.style.display = 'block';
+            }
+        }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Initial check for button visibility on page load
+    // Call handleScroll once to set initial states correctly
+    handleScroll();
+});
     </script>
+
+    <div id="scrollButtons">
+        <button id="scrollTopBtn" title="Nach oben scrollen">▲</button>
+        <button id="scrollBottomBtn" title="Nach unten scrollen">▼</button>
+    </div>
 </body>
 </html>
